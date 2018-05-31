@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ 版权所有 2018 ，xieyunbo.com
+  -->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xyb.trash.dao.cms.CmsMenuMapper">
+  <resultMap id="BaseResultMap" type="com.xyb.trash.pojo.cms.CmsMenu">
+    <id column="RESOURCE_ID" jdbcType="BIGINT" property="resourceId" />
+    <result column="PARENT_ID" jdbcType="BIGINT" property="parentId" />
+    <result column="RESOURCE_URL" jdbcType="VARCHAR" property="resourceUrl" />
+    <result column="RESOURCE_NAME" jdbcType="VARCHAR" property="resourceName" />
+    <result column="RESOURCE_STATU" jdbcType="INTEGER" property="resourceStatu" />
+    <result column="RESOURCE_ORDINAL" jdbcType="VARCHAR" property="resourceOrdinal" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    RESOURCE_ID, PARENT_ID, RESOURCE_URL, RESOURCE_NAME, RESOURCE_STATU, RESOURCE_ORDINAL
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cms_menu
+    where RESOURCE_ID = #{resourceId,jdbcType=BIGINT}
+  </select>
+  <update id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    UPDATE cms_menu
+    SET  RESOURCE_STATU=2
+    where RESOURCE_ID = #{resourceId,jdbcType=BIGINT}
+  </update>
+  <insert id="insert" parameterType="com.xyb.trash.pojo.cms.CmsMenu">
+    insert into cms_menu (RESOURCE_ID, PARENT_ID, RESOURCE_URL,
+      RESOURCE_NAME, RESOURCE_STATU, RESOURCE_ORDINAL
+      )
+    values (#{resourceId,jdbcType=BIGINT}, #{parentId,jdbcType=BIGINT}, #{resourceUrl,jdbcType=VARCHAR}, 
+      #{resourceName,jdbcType=VARCHAR}, #{resourceStatu,jdbcType=INTEGER}, #{resourceOrdinal,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xyb.trash.pojo.cms.CmsMenu">
+    insert into cms_menu
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="resourceId != null">
+        RESOURCE_ID,
+      </if>
+      <if test="parentId != null">
+        PARENT_ID,
+      </if>
+      <if test="resourceUrl != null">
+        RESOURCE_URL,
+      </if>
+      <if test="resourceName != null">
+        RESOURCE_NAME,
+      </if>
+      <if test="resourceStatu != null">
+        RESOURCE_STATU,
+      </if>
+      <if test="resourceOrdinal != null">
+        RESOURCE_ORDINAL,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="resourceId != null">
+        #{resourceId,jdbcType=BIGINT},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=BIGINT},
+      </if>
+      <if test="resourceUrl != null">
+        #{resourceUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="resourceName != null">
+        #{resourceName,jdbcType=VARCHAR},
+      </if>
+      <if test="resourceStatu != null">
+        #{resourceStatu,jdbcType=INTEGER},
+      </if>
+      <if test="resourceOrdinal != null">
+        #{resourceOrdinal,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xyb.trash.pojo.cms.CmsMenu">
+    update cms_menu
+    <set>
+      <if test="parentId != null">
+        PARENT_ID = #{parentId,jdbcType=BIGINT},
+      </if>
+      <if test="resourceUrl != null">
+        RESOURCE_URL = #{resourceUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="resourceName != null">
+        RESOURCE_NAME = #{resourceName,jdbcType=VARCHAR},
+      </if>
+      <if test="resourceStatu != null">
+        RESOURCE_STATU = #{resourceStatu,jdbcType=INTEGER},
+      </if>
+      <if test="resourceOrdinal != null">
+        RESOURCE_ORDINAL = #{resourceOrdinal,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where RESOURCE_ID = #{resourceId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xyb.trash.pojo.cms.CmsMenu">
+    update cms_menu
+    set PARENT_ID = #{parentId,jdbcType=BIGINT},
+      RESOURCE_URL = #{resourceUrl,jdbcType=VARCHAR},
+      RESOURCE_NAME = #{resourceName,jdbcType=VARCHAR},
+      RESOURCE_STATU = #{resourceStatu,jdbcType=INTEGER},
+      RESOURCE_ORDINAL = #{resourceOrdinal,jdbcType=VARCHAR}
+    where RESOURCE_ID = #{resourceId,jdbcType=BIGINT}
+  </update>
+</mapper>

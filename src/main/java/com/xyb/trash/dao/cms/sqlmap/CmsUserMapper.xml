@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ 版权所有 2018 ，xieyunbo.com
+  -->
+
+<!--
+  ~ 版权所有 2018 ，xieyunbo.com
+  -->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xyb.trash.dao.cms.CmsUserMapper">
+  <resultMap id="BaseResultMap" type="com.xyb.trash.pojo.cms.CmsUser">
+    <id column="USER_ID" jdbcType="BIGINT" property="userId" />
+    <result column="LOGINNAME" jdbcType="VARCHAR" property="loginname" />
+    <result column="SHOWNAME" jdbcType="VARCHAR" property="showname" />
+    <result column="PASSWORD" jdbcType="VARCHAR" property="password" />
+    <result column="STATUS" jdbcType="VARCHAR" property="status" />
+    <result column="DESCN" jdbcType="VARCHAR" property="descn" />
+    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="LOGIN_TIME" jdbcType="TIMESTAMP" property="loginTime" />
+    <result column="LAST_LOGIN_TIME" jdbcType="TIMESTAMP" property="lastLoginTime" />
+    <result column="PHONE_NUM" jdbcType="VARCHAR" property="phoneNum" />
+  </resultMap>
+    <resultMap id="ResourceMap" type="com.xyb.domain.SysResource">
+        <result column="RESOURCE_ID" jdbcType="BIGINT" property="resourceId" />
+        <result column="PARENT_ID" jdbcType="BIGINT" property="parentId" />
+        <result column="RESOURCE_URL" jdbcType="VARCHAR" property="resourceUrl" />
+        <result column="RESOURCE_NAME" jdbcType="VARCHAR" property="resourceName" />
+        <result column="RESOURCE_STATU" jdbcType="INTEGER" property="resourceStatu" />
+        <result column="RESOURCE_ORDINAL" jdbcType="VARCHAR" property="resourceOrdinal" />
+    </resultMap>
+  <sql id="Base_Column_List">
+    USER_ID, LOGINNAME, SHOWNAME, PASSWORD, STATUS, DESCN, UPDATE_TIME, LOGIN_TIME, LAST_LOGIN_TIME, 
+    PHONE_NUM
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cms_user
+    where USER_ID = #{userId,jdbcType=BIGINT}
+  </select>
+    <select id="getResouceListByRoleId" parameterType="Map" resultMap="ResourceMap">
+      select * from sys_resource
+            where RESOURCE_ID in
+            (select RESOURCE_ID from sys_role_resource where 1=1
+            <if test="roleId!=null">
+                and ROLE_ID= #{roleId,jdbcType=BIGINT}
+            </if>
+            <if test="resourceStatu!=null">
+                and RESOURCE_STATU= #{resourceStatu,jdbcType=INTEGER}
+            </if>
+            )
+    </select>
+    <select id="selectAllMenu" resultMap="ResourceMap">
+        select * from sys_resource
+    </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from cms_user
+    where USER_ID = #{userId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.xyb.trash.pojo.cms.CmsUser">
+    insert into cms_user (USER_ID, LOGINNAME, SHOWNAME,
+      PASSWORD, STATUS, DESCN, 
+      UPDATE_TIME, LOGIN_TIME, LAST_LOGIN_TIME, 
+      PHONE_NUM)
+    values (#{userId,jdbcType=BIGINT}, #{loginname,jdbcType=VARCHAR}, #{showname,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{descn,jdbcType=VARCHAR}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{loginTime,jdbcType=TIMESTAMP}, #{lastLoginTime,jdbcType=TIMESTAMP}, 
+      #{phoneNum,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xyb.trash.pojo.cms.CmsUser">
+    insert into cms_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        USER_ID,
+      </if>
+      <if test="loginname != null">
+        LOGINNAME,
+      </if>
+      <if test="showname != null">
+        SHOWNAME,
+      </if>
+      <if test="password != null">
+        PASSWORD,
+      </if>
+      <if test="status != null">
+        STATUS,
+      </if>
+      <if test="descn != null">
+        DESCN,
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME,
+      </if>
+      <if test="loginTime != null">
+        LOGIN_TIME,
+      </if>
+      <if test="lastLoginTime != null">
+        LAST_LOGIN_TIME,
+      </if>
+      <if test="phoneNum != null">
+        PHONE_NUM,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="loginname != null">
+        #{loginname,jdbcType=VARCHAR},
+      </if>
+      <if test="showname != null">
+        #{showname,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="descn != null">
+        #{descn,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="loginTime != null">
+        #{loginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastLoginTime != null">
+        #{lastLoginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="phoneNum != null">
+        #{phoneNum,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xyb.trash.pojo.cms.CmsUser">
+    update cms_user
+    <set>
+      <if test="loginname != null">
+        LOGINNAME = #{loginname,jdbcType=VARCHAR},
+      </if>
+      <if test="showname != null">
+        SHOWNAME = #{showname,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        PASSWORD = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        STATUS = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="descn != null">
+        DESCN = #{descn,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="loginTime != null">
+        LOGIN_TIME = #{loginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastLoginTime != null">
+        LAST_LOGIN_TIME = #{lastLoginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="phoneNum != null">
+        PHONE_NUM = #{phoneNum,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where USER_ID = #{userId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xyb.trash.pojo.cms.CmsUser">
+    update cms_user
+    set LOGINNAME = #{loginname,jdbcType=VARCHAR},
+      SHOWNAME = #{showname,jdbcType=VARCHAR},
+      PASSWORD = #{password,jdbcType=VARCHAR},
+      STATUS = #{status,jdbcType=VARCHAR},
+      DESCN = #{descn,jdbcType=VARCHAR},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      LOGIN_TIME = #{loginTime,jdbcType=TIMESTAMP},
+      LAST_LOGIN_TIME = #{lastLoginTime,jdbcType=TIMESTAMP},
+      PHONE_NUM = #{phoneNum,jdbcType=VARCHAR}
+    where USER_ID = #{userId,jdbcType=BIGINT}
+  </update>
+</mapper>

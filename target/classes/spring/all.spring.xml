@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc" xmlns:context="http://www.springframework.org/schema/context"  xmlns:util="http://www.springframework.org/schema/util" 
+	xmlns:task="http://www.springframework.org/schema/task" 
+	xsi:schemaLocation="
+     http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+     http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+     http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd
+     http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+     http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+     http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd 
+     http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd 
+     http://cxf.apache.org/jaxws 
+     http://cxf.apache.org/schemas/jaxws.xsd">
+     <!-- 下面这句用来指定spring的autowire扫描哪些包下面的组件 -->
+    <context:component-scan base-package="com.xyb.trash.service"></context:component-scan>
+    <!-- spring自带定时任务配置 -->
+    <!-- <task:annotation-driven scheduler="trashScheduler"/>
+    spring自带定时任务多线程配置，因为默认是单线程，多任务情况下会按顺序执行，这样就会影响定时任务实际启动时间
+    <task:scheduler id="trashScheduler" pool-size="10"/> -->
+    <!-- 数据库配置文件 -->
+	<import resource="classpath:spring/db.spring.xml" />
+	<!-- 配置 JSR303 Bean Validator 定义 -->
+    <bean id="validator"
+        class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" />
+</beans>
