@@ -9,12 +9,13 @@
 package com.xyb.trash.dao.cms;
 
 
+import com.xyb.trash.annotation.OaDao;
 import com.xyb.trash.pojo.cms.CmsMenu;
 import com.xyb.trash.pojo.cms.CmsUser;
 
 import java.util.List;
 import java.util.Map;
-
+@OaDao
 public interface CmsUserMapper {
     int deleteByPrimaryKey(Long userId);
 

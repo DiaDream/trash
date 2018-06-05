@@ -9,8 +9,9 @@
 package com.xyb.trash.dao.cms;
 
 
+import com.xyb.trash.annotation.OaDao;
 import com.xyb.trash.pojo.cms.CmsMenu;
-
+@OaDao
 public interface CmsMenuMapper {
     int deleteByPrimaryKey(Long resourceId);
 

@@ -8,10 +8,11 @@
 
 package com.xyb.trash.dao.cms;
 
+import com.xyb.trash.annotation.OaDao;
 import com.xyb.trash.pojo.cms.CmsRole;
 
 import java.util.List;
-
+@OaDao
 public interface CmsRoleMapper {
     int deleteByPrimaryKey(Long roleId);
 
