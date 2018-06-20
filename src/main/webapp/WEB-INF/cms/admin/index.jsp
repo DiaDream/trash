@@ -15,7 +15,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>后台管理</title>
+        <title>CMS后台管理</title>
         <link rel="stylesheet" href="<%=request.getContextPath()%>/css/bootstrap.min.css" />
         <link rel="stylesheet" href="<%=request.getContextPath()%>/css/bootstrap-grid.min.css" />
         <link rel="stylesheet" href="<%=request.getContextPath()%>/css/bootstrap-reboot.min.css" />
@@ -36,7 +36,7 @@
             
             $.ajax(
                     {
-                        url : "<%=request.getContextPath()%>/admin/toDashboard",
+                        url : "<%=request.getContextPath()%>/news/newsList",
                         dataType : "html",
                         type : "post",
                         error : function (data)

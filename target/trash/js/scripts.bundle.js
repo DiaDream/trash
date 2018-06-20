@@ -1,3 +1,7 @@
+/*
+ * 版权所有 2018 ，xieyunbo.com
+ */
+
 var mApp = function ()
 {
     var e = function (e)

@@ -1,0 +1,569 @@
+.pr{position:relative;}
+.pa{position:absolute;}
+.clear{ clear:both;}
+.clearfix:after{display:block;clear:both;content:"";visibility:hidden;height:0;}
+.fl{ float: left;}
+.fr{ float: right;}
+.tl{ text-align: left;}
+.tc{ text-align: center;}
+.tr{ text-align: right;}
+.br{ border-right: 1px solid #e4e4e4; }
+h1{ font-weight: normal; font-size: 28px; }
+.img_cover{ position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); }
+.gray_bg{ background-color: #f5f5f5; }
+.z_banner{ background-position: center; background-repeat: no-repeat; }
+.z_banner .container{ padding-top: 148px; }
+.z_solution_banner{ height: 500px; background: url("../images/business/jiancai/banner_solution.jpg");background-color: #49505a; }
+.z_solution_banner.jumbotron {margin-bottom: 0;}
+.z_banner_more{ margin: auto; width: 196px; height: 46px; }
+.z_banner_more a{ display: block; color: white; font-size: 14px; border: 2px solid white; border-radius: 3px; line-height: 46px; }
+.z_banner_more a:hover{ background-color: #FF9900; color: white; border-color: #FF9900; }
+.z_banner{ color: white; }
+.z_banner h1{ font-size: 40px; font-weight: normal; line-height: 1.1; }
+.z_banner h1 span{ font-size: inherit; color: white; }
+.z_banner p{ font-size: 14px; color: white; }
+.z_whole_case{ padding-top: 35px; padding-bottom: 80px; }
+.z_each_case{ margin-top: 40px; border-bottom: 3px solid #ededed; padding-bottom: 20px; }
+.z_each_case:hover{ border-bottom: 3px solid #f29c06; }
+.z_whole_case h1{ font-weight: bold; }
+.z_each_case p{ margin-top: 20px; font-size: 16px; }
+.z_application{ padding-top: 20px; padding-bottom: 60px; }
+.z_application h1{ text-align: center; font-size: 28px; color: #333333; margin-bottom: 50px; font-weight: bold; }
+.z_application p{ font-size: 14px; }
+.z_application strong{ display: block; font-size: 16px; margin-top: 40px; margin-bottom: 20px; }
+.z_application strong img{ display: inline-block; margin-right: 20px; }
+.z_pro_news{ padding-top: 50px; padding-bottom: 150px; }
+.z_pro_news h1{ text-align: center; margin-bottom: 60px; }
+.z_pro_news ul li{ list-style: none; float: left; margin-left: 10%; width: 40%; line-height: 30px; }
+.z_pro_news ul li img{ display: inline-block; margin-right: 20px; }
+.z_pro_news ul li a{ color: #666666; }
+.z_pro_news ul li a:hover{ color: #f29c06 }
+.z_project_case{ padding-top: 55px; padding-bottom: 78px; }
+.z_nav{ height: 55px; line-height: 55px; color: #A1A1A1; border-top: 1px solid #e4e4e4; }
+.z_nav a{ color: #A1A1A1; }
+.z_nav a:hover{ color: #666666; }
+.z_nav span{ display: inline-block; margin: 0 15px; }
+.z_gc_banner{ height: 500px; background: url("../images/business/jiancai/u2356.jpg"); }
+.z_gc_solution{ padding-top: 80px; }
+.z_gc_solution h1{ text-align: left; font-size: 28px; color: #333333; margin-bottom: 35px; }
+.z_gc_solution .text-center{ display: none; }
+.z_gc_solution p{ font-size: 14px; }
+.z_gc_solution_info{ padding-left: 30px; }
+.z_gc_liangdian{ padding-top: 65px; padding-bottom: 100px; }
+.z_gc_liangdian h1{ margin-bottom: 50px; text-align: center; }
+.z_gc_project{ margin: auto; max-width: 349px; background-color: #f2f2f2; padding: 20px 35px; }
+.z_gc_liangdian img{ display: block; }
+.z_gc_liangdian strong{ font-size: 16px; }
+.z_gc_project:hover{ background-color: #3671CF; cursor: pointer; }
+.z_gc_project:hover strong{ color: white; }
+.z_gc_project:hover p{ color: white; }
+.z_gc_touzi{ padding-top: 60px; padding-bottom: 100px; }
+.z_gc_touzi h1+p{ margin-top: 30px; }
+.z_gc_product{ padding-top: 70px; padding-bottom: 105px; }
+.z_gc_product h1{ margin-bottom: 50px; }
+.z_gc_pro_show{ position: relative; max-width: 349px; }
+.z_gc_pro_show p{ position: absolute; bottom: 0; left: 0; width: 100%; height: 60px; line-height: 60px; background: rgba(255,255,255,0.9); color: white; font-size: 16px; color: #333333;}
+.z_gc_pro_show+.z_gc_pro_show{ margin-top: 30px; }
+.z_gc_pro_show:hover p{ background: rgba(54,113,207,0.9); color: white;}
+.z_each_gc_case{ margin-top: 40px; }
+.z_each_gc_case h2{ font-size: 18px; font-weight: bold; margin-top: 30px; }
+.z_each_gc_case{ text-align: left; }
+.z_detailed{ margin-top: 10px; }
+.z_detailed a{ color: #FF9933;  }
+.z_ss_banner{ height: 500px; background: url("../images/business/jiancai/u2716.jpg"); }
+.z_touzi_title{ margin: 45px 0 30px; }
+.z_touzi_content p+img{ margin-top: 30px; }
+.z_gc_case{ padding: 55px 0; }
+.z_gc_parameter{ padding-top: 60px; padding-bottom: 80px; }
+.z_parameter_content{ margin-top: 50px; }
+.z_parameter_note{ margin-top: 30px; margin-left: 10px; color: #AEAEAE; }
+.z_sj_banner{ height: 500px; background: url("../images/business/jiancai/u3152.jpg"); }
+.z_sj_title{ margin-top: 50px; }
+.z_sj_title > li > a{ width: 300px; }
+.z_lsks_banner{ height: 500px; background: url("../images/business/jiancai/u3659.jpg"); }
+.z_fqw_banner{ height: 500px; background: url("../images/business/jiancai/u4044.jpg"); }
+.z_fqw_parameter{ margin-top: 50px; }
+.jiancai_case_banner{ height: 500px; background: url("../images/business/jiancai/u1976.jpg") center center no-repeat; background-color: rgb(54, 113, 207);}
+.jiancai_pro_banner{ height: 500px; background: url("../images/business/jiancai/u186.jpg") center center no-repeat; }
+.jiancai_banner_text{ margin-top: 230px; background: rgba(54,113,207,0.9); padding: 30px 35px; }
+.jiancai_banner_text h1{ margin-bottom: 10px; font-size: 20px; font-weight: bold; color: white; }
+.jiancai_banner_text p{ font-size: 14px; color: white; }
+.jiancai_pro_content{ padding-top: 60px; padding-bottom: 80px; }
+.jiancai_pro_info{ margin-bottom: 90px; }
+.jiancai_pro_show .row+.row{ margin-top: 55px; }
+.jiancai_pro_show .col-md-8{ margin-bottom: 30px; }
+.jiancai_pro_show .col-md-4:nth-child(2){ margin-bottom: 30px; }
+.img_cover_text{ position: absolute; width: 100%; height: 100%; left: 0; top: 0; background: rgba(0,0,0,0.5); }
+.jiancai_pro_list{ max-width: 350px; }
+.jiancai_pro_list p{ position: absolute; bottom: 0; width: 100%; height: 76px; line-height: 76px; text-align: center; background: rgba(255,255,255,0.9); font-size: 18px; }
+.jiancai_pro_list:hover p{ background: rgba(54,113,207,0.9); color: white; }
+.pro_list_2{ max-width: 729px; }
+/*.pro_list_2:hover .img_cover_text,.pro_list_1:hover .img_cover_text{ background: rgba(0,0,0,0.7); }*/
+/*.pro_list_2 p{ position: absolute; left: 50%; top: 50%; margin-left: -129px; margin-top: -68px; color: white; font-size: 28px; line-height: 48px; border: 2px solid white; width: 254px; height: 136px; padding-top: 20px; }
+.pro_list_1{ max-width: 350px; }
+.pro_list_1 p{ position: absolute; color: white; font-size: 18px; width: 100%; text-align: center; top: 50%;}*/
+.z_ks_banner{ height: 500px; background: url("../images/business/kuangshan/u5073.jpg");background-color: #323e4a; }
+.z_ks_banner.jumbotron{margin-bottom: 0;}
+.z_ks_content h1{ font-weight: bold; }
+.z_ks_nr1{ padding: 70px 0 130px 0; }
+.z_ks_nr1 ul{ margin-left: 0; padding-left: 0; }
+.z_ks_nr1 li{ list-style: none; }
+.z_ks_wuliao{ border-top: 1px solid #ebebeb; margin-top: 30px; }
+.z_ks_wuliao li{ float: left; width: 25%; padding-left:  7%; margin-top: 40px; background: url("../images/business/kuangshan/ks_list_icon.jpg") left center no-repeat; }
+.z_ks_wuliao li a{ font-size: 16px; color: #666666; }
+.z_ks_wuliao li a:hover{ color: #f29c06; }
+.z_ks_news li{ line-height: 38px;height: 38px; }
+.z_ks_news li a{ color: #666666;display: block;float: left;overflow: hidden;text-overflow: ellipsis;text-align: left;}
+.z_ks_news li span{ float: right; }
+.z_ks_news li a:hover{ color: #999999; }
+.z_ks_product{ padding: 45px 0 100px 0; }
+.z_ks_product .col-md-3{ padding-left: 0; padding-right: 0; }
+.z_ks_product h1{  }
+.z_ks_pro_show p{ display: none; position: absolute; width: 100%; height: 100%; left: 0; top: 0; background: rgba(39,72,153,0.9); color: white; }
+.z_ks_pro_show p span{ display: block; position: absolute; width: 100%; top: 50%; text-align: center; font-size: 16px; }
+.z_ks_pro_show:hover p{ display: block; }
+.z_ks_case{ padding-top: 55px; padding-bottom: 70px; }
+.z_ks_case_list{ max-width: 350px; }
+.z_ks_case h1+p{ margin-bottom: 30px; }
+.z_ks_case h1+p a{ color: #FF9900; font-size: 16px; }
+.more_case{ margin-top: 20px; }
+.z_ks_case_list:hover .z_ks_case_text{ border-bottom: 4px solid #f29c06;}
+.z_ks_case_list:hover .z_ks_case_text h2{ margin-top: 25px; }
+.more_case a{ color: #FF9933; }
+.z_ks_case_text{ padding: 0 20px 30px 20px;	border-bottom: 4px solid #d3d6da; text-align: left; }
+.z_ks_case_text h2{	-webkit-transition: all 0.5s;-moz-transition: all 0.5s;-o-transition: all 0.5s;transition: all 0.5s; margin-top: 45px; margin-bottom: 20px; color: #333333; font-weight: bold; }
+.z_ks_EPC{ padding-top: 65px; padding-bottom: 85px; }
+.epc_img_cover{ width: 100%; height: 60px; bottom: 0; left: 0; background: rgba(255,255,255,0.9); color: #333333;}
+.epc_img_cover strong{ font-size: 20px; display: block; line-height: 60px; font-weight: normal; padding-left: 40px; }
+.epc_img_cover p{ display: none; }
+.epc_content{ /*max-width: 350px;*/ margin-top: 30px;}
+.epc_content:hover .epc_img_cover{ height: 100%; padding-left: 40px; padding-right: 40px; background-color: #3671CF; color: white;}
+.epc_content:hover .epc_img_cover strong{ padding-top: 15%; padding-left: 0; }
+.epc_content:hover .epc_img_cover p{ display: block; color: white;}
+.kuangshan_ks_banner{ height: 500px; background: url("../images/business/kuangshan/u4414.jpg") center center no-repeat; background-color: rgb(54, 113, 207); }
+.material_banner_1 {height: 500px;background:rgb(54, 113, 207) url("../images/case/material/1/banner.jpg") center center no-repeat;}
+.material_banner_2 {height: 500px;background:rgb(54, 113, 207) url("../images/case/material/2/banner.jpg") center center no-repeat;}
+.mill_wuliao_banner{ background: url("../images/business/kuangshan/u4414.jpg") center center no-repeat rgb(54, 113, 207); }
+/*.kuangshan_ks_banner_text{ margin-top: 230px; background:rgba(54,113,207,0.9); padding: 30px 35px; }
+.kuangshan_ks_banner_text h1{ margin-bottom: 10px; font-size: 34px; font-weight: normal; color: white; }
+.kuangshan_ks_banner_text p{ font-size: 14px; color: #333333; color: white; }*/
+.kuangshan_ks_nr1{ padding-top: 30px; padding-bottom: 20px; }
+.ks_nr1_title{ font-size: 18px; padding-bottom: 16px; border-bottom: 1px solid #e4e4e4; }
+.kuangshan_ks_nr1 ul{ width: 80%; margin-left: 10%; padding-left: 0;}
+.kuangshan_ks_nr1 ul li{ margin-top: 15px; list-style: none; width: 10%; float: left; height: 40px; line-height: 40px; text-align: center;}
+.kuangshan_ks_nr1 ul li{ margin-right: 6.6%; }
+.kuangshan_ks_nr1 ul li a{ display: block; color: #666666; }
+.ks_current_tab,.kuangshan_ks_nr1 ul li:hover{ border-bottom: 3px solid #FF9900; }
+.ks_info{ padding-top: 50px; padding-bottom: 50px; }
+.ks_info h1{ margin-top: 30px; }
+.ks_yingyong{ padding-top: 90px; padding-bottom: 60px; }
+.ks_yingyong_img img{ margin-bottom: 20px; }
+.ks_yingyong ul{ padding-left: 0; border-top: 1px solid #e4e4e4; margin-top: 20px; padding-top: 15px;}
+.ks_yingyong ul li{ line-height: 35px; font-size: 16px; list-style: none; background: url("../images/business/kuangshan/ks_list_icon.jpg") left center no-repeat; padding-left: 50px; }
+.ks_yingyong ul li a{ color: #666666;  }
+.ks_yingyong ul li:hover{  background-image: url("../images/business/kuangshan/ks_list_icon_active.jpg"); }
+.ks_yingyong ul li a:hover{ color: #FF9933; }
+.ks_gongyi{ padding: 70px 0; }
+.ks_gongyi h1{ margin-top: 20px; margin-bottom: 30px; }
+.kuangshan_ks_case{ padding-top: 50px; padding-bottom: 60px; }
+.ks_case{ padding: 80px 0 55px 0; }
+.ks_case h1{ margin-bottom: 30px; }
+.ks_case_text{ display: none; position: absolute; width: 100%; height: 100%; left: 0; top: 0; background-color: #3671CF;  }
+.ks_case_content{ position: absolute; left: 50%; top: 50%; margin-left: -50px; margin-top: -70px; }
+.ks_case_content p{ color: white; }
+.ks_case_item{ max-width: 257px; margin-bottom: 20px;}
+.ks_case_item:hover .ks_case_text{ display: block; }
+.ks_case_list{ margin-bottom: 47px; max-width: 344px; }
+.ks_case_list p{ padding: 30px 0; font-size: 14px; color: #666666; border-bottom: 4px solid #f3f3f3; text-align: center; }
+.ks_case_list:hover p{ border-color: #f29c06; color: #f29c06;}
+.ks_other_case ul{  float: left;  padding-top: 50px; padding-bottom: 50px; width: 48%; background-color: #f5f5f5;  }
+.ks_other_case ul+ul{ margin-left: 4%; }
+.ks_other_case ul li{ list-style: none; line-height: 30px; color: #666666; padding-left: 5%; }
+.ks_other_case ul li a{color: #666666;}
+.material-mc-banner {background: url('../images/products/mc/mc-material.jpg') no-repeat center;height: 434px; background-size: cover;position: relative;margin: -35px 15px 65px; }
+.material-mc-banner > a {text-indent: -9999px;overflow: hidden;position: absolute;top: 0;bottom: 0;right: 0;left: 0;z-index: 11;}
+.material-mc-banner p {position: absolute;left: 0;right: 0;bottom: 0;text-align: center;height: 76px;background-color: rgba(255,255,255,0.9);line-height: 76px;width: 100%;font-size: 18px;z-index: 10;}
+.material-mc-banner:hover p {background-color: rgba(54,113,207,0.9);color: #fff;}
+@media (max-width: 992px){
+	.z_ks_news{ margin-top: 50px; }
+	.ks_info h1{ margin-top: 10px; }
+	.ks_other_case ul{  width: 100%;  }
+	.ks_other_case ul+ul{ margin-left: 0; }
+	.z_application .col-md-6+.col-md-6{ margin-top: 30px; }
+	.z_pro_news ul li{ margin-left: 0; width: 100%;  }
+	.z_gc_solution_info{margin-top: 30px;}
+	.service_nr1 > .row > .col-sm-6:nth-child(2n) .service_item{ border-right: none; }
+	.service_nr1 > .row:last-child .col-sm-6:nth-child(3) .service_item{ border-top: none; }
+	.service_nr1 > .row:last-child .col-sm-6:nth-child(4) .service_item{ border-top: none; }
+	
+	.service_nr2 .col-md-6:first-child{ border-right: none; }
+	.service_nr2 .col-md-6+.col-md-6{ margin-top: 50px; }
+	.service_nr4 .col-md-6+.col-md-6{ margin-top: 30px; }
+}
+@media (max-width: 768px){
+	.z_ks_product .col-xs-6:nth-child(2){ border-right: none; border-bottom: 1px solid #e4e4e4; }
+	.z_ks_product .col-xs-6:first-child{ border-bottom: 1px solid #e4e4e4; }
+	.z_ks_case_text h2{ font-size: 20px; }
+	.kuangshan_ks_nr1 ul{ width: 100%; margin-left: 0; }
+	.kuangshan_ks_nr1 ul li{ width: 15%; }
+	.kuangshan_ks_nr1 ul li+li{ margin-left: 13%; }
+	.kuangshan_ks_nr1 ul li:nth-child(5){ margin-left: 0; }
+	.ks_info h1{ margin-top: 0; }
+	.ks_info .col-md-6+.col-md-6{ margin-top: 30px; }
+	.pro_list_2 p{ font-size: 18px; width: 200px; height: 100px; padding-top: 0; margin-left: -100px; margin-top: -50px;}
+	.jiancai_pro_list p{ font-size: 16px; }
+	.jiancai_banner_text h1{ font-size: 28px; }
+	.service_nr3 .col-md-6+.col-md-6{ margin-top: 30px; }
+}
+@media (max-width: 650px){
+	.pro_list_1 p{ font-size: 16px; }
+	.jiancai_pro_list p{ font-size: 14px; height: 40px; line-height: 40px; }
+	.kuangshan_ks_banner_text h1{ font-size: 28px; }
+	.kuangshan_ks_banner_text p{ font-size: 13px; }
+}
+@media (max-width: 600px){
+	.z_ks_case_text p{ display: none; }
+}
+ul{padding-left:0;}
+/* Jianzhuguliao Solutions */
+.jzgl_banner{background: url(../images/jzgl/yewu_banner.jpg) no-repeat center; height:680px;}
+.jzgl_banner .container{text-align:center; padding-top:236px;}
+.jzgl_banner h1{color:#fff; font-size:48px; font-weight:bold;}
+.jzgl_banner p, .latest_news p a{color:#fff; font-size:16px;}
+.latest_news{border:1px solid #fff; width:586px; padding:22px 28px; margin:66px auto 0 auto;}
+.latest_news h4{border-right:1px solid #fff; color:#FF9900; line-height:18px; padding-right:18px; margin:3px 18px 0 0; float:left;}
+.latest_news p span{margin-right:18px;}
+.classify{margin-top:60px; margin-bottom:79px;}
+.classify h2{font-size:28px; font-weight:400; line-height:48px; margin-bottom:5px; text-align:center;}
+.classify p{font-size:13px; margin-bottom:48px;}
+.classify_link{position:relative;}
+.classify_link img{width:100%;}
+.classify_link .zhezhao{width:100%; height:100%; background-color:#000; filter:alpha(opacity=50); -moz-opacity:0.5; opacity:0.5; position:absolute; top:0; left:0;}
+.classify_link h3{ width:100px; height:100px; text-align:center; position:absolute; top:50%; left:50%; margin:-50px 0 0 -50px;}
+.classify_link h3 a{border:2px solid #fff; color:#fff; display:block; font-size:18px; line-height:28px; padding:34px 21px;}
+.classify_link h3.long_title a{padding-top:20px; padding-bottom:20px;}
+.classify_link.current .zhezhao{display:none;}
+.classify_link.current h3 a{border-color:#ff9900; background-color:#ff9900;}
+.jzgl_pro{background-color:#f2f2f2; padding-top:60px; padding-bottom:100px;}
+.jzgl_pro h2{font-size:28px; font-weight:400; line-height:48px; text-align:center; margin-bottom:0;}
+.jzgl_pro p{font-size:13px; margin-bottom:38px;}
+.jzgl_pro p.more{margin-bottom:18px; text-align:center;}
+.jzgl_pro .more a{color:#FF9933;}
+.pro-item p{height:100%;}
+.configure{background: url("../images/jzgl/configure_bg.jpg") no-repeat center; height:500px;}
+.configure h2{color:#fff; font-size:36px; font-weight:bold; line-height:47px; padding-top:135px; margin-bottom:26px; text-align:center;}
+.configure p{color:#fff; font-size:13px; text-align:center;}
+.configure .conf_btn{ width:167px; line-height:50px; margin:50px auto 0 auto; text-align:center;}
+.configure .conf_btn a{border:2px solid #ccc; color:#fff; font-size:16px; padding:12px 49px 13px 50px;}
+.configure .conf_btn a:hover{background-color:#ff9900; border-color:#ff9900;}
+/* Jianzhuguliao Output */
+.tph_banner{background: url("../images/jzgl/tph_banner.jpg") no-repeat center center;}
+.division{background-color:#f2f2f2; padding:33px 9px 30px 24px; margin-top:70px; margin-bottom:53px;}
+.division h4{color:#999; font-weight:bold; line-height:40px; margin:0 10px; float:left;}
+.division li ul{float:left; max-width:980px;}
+.division li li{color:#333; font-size:13px; line-height:40px; width:120px; margin:0 10px; float:left;}
+.division li li:hover{background-color:#000; color:#fff; cursor:pointer; text-align:center;}
+.tph_cont{margin-bottom:127px;}
+.tph_cont h2{font-size:28px; line-height:48px; text-align:center; margin-bottom:32px;}
+.tph_cont li{margin-bottom:47px;}
+.tph_cont .text a{color:#666; display:block; font-size:16px; line-height:22px; padding:25px 40px; min-height:98px;}
+.tph_cont .text a:hover{background-color:#ff9900; color:#fff;}
+/* Jianzhuguliao Product */
+.jzglPro_banner{background:url("../images/jzgl/pro_banner.jpg") no-repeat center top rgb(54, 113, 207); margin-bottom: 0;}
+.jzglPro_banner .text{background: rgba(54,113,207,0.9);}
+.jzglPro_banner .text p{color:white;}
+.jzglPro .part1{padding-top:60px; padding-bottom:92px;}
+.jzglPro h2{font-size:28px; font-weight:bold; line-height:normal; text-align:center;}
+.jzglPro p{text-align:center; margin-bottom:35px;}
+.jzglPro .part1 .pro-item{padding-top:15px;}
+.jzglPro .part1 .border-bottom{padding-top:0; padding-bottom:15px;}
+.part2{background-color:#f1f1f1; padding:88px 0;}
+.part3{padding:88px 0 81px 0;}
+.new_product{background-color:#f1f1f1; padding-bottom:30px;}
+.new_product .carousel{padding-bottom:41px;}
+.new_product .carousel-indicators{bottom:8px;}
+.new_product .carousel-indicators li{border-color:#787878;}
+.new_product .carousel-indicators li.active{background-color:#ff9900; border:0;}
+.new_product p{border:2px solid #ccc; color:#333; font-size:18px; line-height:66px; width:190px; margin-bottom:0;}
+.conveyor{background:url("../images/jzgl/conveyor_bg.jpg") no-repeat center center; height: 500px;}
+.conveyor h2{color:#fff; font-size:36px; font-weight:bold; line-height:47px; padding-top:135px; margin-bottom:26px; text-align:center;}
+.conveyor p{color:#fff; font-size:13px; max-width:980px; margin:0 auto; text-align:center;}
+.conveyor_btn{border:1px solid #ccc; width:250px; line-height:46px; margin:38px auto 0 auto; border-radius: 3px; }
+.conveyor_btn:hover{ background-color: #f90; border-color: #f90; }
+.conveyor_btn p{ padding: 8px 0; font-size: 16px; }
+.conveyor_btn a{color:#fff;  width:122px; line-height:30px; text-align:center;}
+.conveyor_btn span{width: 1px; color: white; padding: 0 10px;}
+.index_banner h1{ font-size: 20px; }
+.index_solution_title h1,.index_solution_title p{ text-align: center; }
+.business-list{ padding: 20px 0; border-bottom: 2px solid #d7d7d7; }
+.business-list strong{ font-size: 18px; color: #333333; font-weight: normal; display: block; margin-bottom: 10px; }
+.business-list p{ color: #BCBCBC; font-size: 14px; }
+.business-item:hover .business-list{ background-color: #274899; border-bottom: 2px solid #274899; }
+.business-item:hover .business-list strong,.business-item:hover .business-list p{ color: white; }
+.mytabs_li_5 > li > a{ font-size: 13px; }
+.case_list .text a{ font-size: 16px; color: #666666; }
+.service_nr1{ padding-top: 85px; padding-bottom: 115px; }
+.service_nr1 h1{ text-align: center; margin-bottom: 50px; font-weight: bold; }
+.service_nr1 .col-md-3{ padding-left: 0; padding-right: 0; }
+.service_nr1 .row:last-child .service_item{ border-bottom: 1px dotted #d7d7d7; }
+.service_item{ padding-left: 20%; font-size: 16px; color: #666666; height: 120px; line-height: 120px; border-top: 1px dotted #d7d7d7; border-right: 1px dotted #d7d7d7; }
+.service_nr1 > .row > .col-md-3:last-child .service_item{ border-right: none; }
+.service_item img{ display: inline-block; margin-right: 10px; }
+.service_nr2{ padding-top: 90px; padding-bottom: 100px; }
+.service_nr2 .col-md-6{ padding-left: 60px; padding-right: 60px; }
+.service_nr2 p+h2{ margin-top: 90px; }
+.service_nr2 h2,.service_nr3 h2,.service_nr4 h2{ margin-bottom: 30px; font-size: 20px; font-weight: bold; }
+.service_nr2 h2 span,.service_nr3 h2 span{ font-size: 16px; color: #999999; font-weight: normal; }
+.service_nr3{ padding-top: 90px; padding-bottom: 75px; }
+.service_nr3_content{ padding-left: 50px; padding-right: 20px; }
+.service_nr3_content h2{ margin-top: 30px; }
+.service_nr3_content ul{ margin-top: 20px; }
+.service_nr3_content ul li{ list-style-position: inside; }
+.service_nr4{ padding-top: 100px; padding-bottom: 130px; }
+.service_nr4 p+h2{ margin-top: 40px; }
+.service_nr4 .col-md-6:first-child{ padding-right: 100px; }
+.common_question{ padding-top: 90px; padding-bottom: 110px; }
+.question_list li{ list-style: none; padding-bottom: 35px; margin-bottom: 35px; border-bottom: 1px solid #e4e4e4; }
+.question_list li strong{ font-size: 20px; font-weight: normal; display: block; margin-bottom: 15px; color: #333333; }
+.fenye ul{ margin: auto; max-width: 500px; }
+.fenye ul li{ float: left; margin: 10px; list-style: none; width: 48px; height: 48px; text-align: center; line-height: 48px; background-color: #f5f5f5; }
+.fenye ul li a{ display: block; }
+.fenye .next_page{ width: 198px; }
+.fenye .active,.fenye ul li:hover{ background-color: #ff9900; }
+.fenye .active a,.fenye ul li:hover a{ color: white; }
+.sec-item:hover{ border-color: #f29c06; }
+.banner .text{ opacity: 1; }
+.offices-map{width:100%; position:relative; top:0; left:0; margin-bottom:83px;}
+.offices-map .map{width:100%; height:auto;}
+.office-info{ position:absolute;}
+.mapIco{background:url(../images/network/mapicon.png) center center no-repeat; cursor:pointer; width:21px; height:35px; float:left;}
+.mapIco:hover ~.info{ display: block; }
+.info{display:none; background:url(../images/network/infobg.png) left center no-repeat; width:200px; height:51px; margin-top:-8px; float:left; position:relative; z-index:1;}
+.info img, .info .img{height:31px; float:left; padding:10px 6px 0 16px;}
+.info p{color: #333; font-family:Arial; font-size:14px; padding-top:4px;}
+.info p span{display: block; font-weight:bold;}
+.mexico{top:246px; left:195px;}
+.colombia{top:323px; left:286px;}
+.chile{top:438px; left:291px;}
+.brazil{top:360px; left:317px;}
+.ghana{top:307px; left:491px;}
+.nigeria{top:323px; left:553px;}
+.algeria{ top: 240px; left: 520px; }
+.east-africa{top:306px; left:647px;}
+.saudi-arabia{top:253px; left:651px;}
+.kazakhstan{top:132px; left:655px;}
+.india{top:289px; left:745px;}
+.mongolia{top:147px; left:788px;}
+.indonesia{top:341px; left:830px;}
+.vietnam{top:287px; left:841px;}
+.malaysia{top:329px; left:861px;}
+.philippines{top:302px; left:889px;}
+.more{ color: #FF9900; font-size: 13px; }
+.more_btm_line{ display: inline-block; width: 120px; padding-bottom: 15px; border-bottom: 2px solid #cccccc; }
+.z_ks_pro_list{ margin-top: 60px; }
+.weixiu_banner{background:url(../images/products/service/u10297.jpg) no-repeat center center}
+
+/* mobile page begin */
+.banners.mobile-banner{height:260px;background-image:url("../images/banner/mobile-banner.jpg");text-align:center;}
+.mobile{ background-color: #f4f7f9; }
+.mobile .section{ margin-top: 0; background-color: white; margin-bottom: 20px; }
+.mobile .container{ padding-top: 65px; padding-bottom: 65px; }
+.mobile h2{ font-size: 28px; font-weight: bold; text-align: center; margin-bottom: 40px; }
+.mobile-news,.mobile-adv{ margin-left: 0; margin-right: 0; border-top: 1px solid #e4e4e4; margin-top: 30px; padding-top: 40px; }
+.mobile-news span{ float: right; }
+.mobile-news .col-md-5,.mobile-adv .col-md-5{ padding-left: 0; padding-right: 0; }
+.mobile-adv strong{ display: block; font-size: 16px; border-left: 5px solid #3671cf; height: 21px; line-height: 21px; padding-left: 15px; margin-bottom: 15px; }
+.mobile-adv p+strong{ margin-top: 30px; }
+.nav-mobile{ text-align: center; }
+.nav-mobile.nav-justified>li>a{ width: auto; border-radius: 0; }
+.nav-mobile.nav-justified>li:first-child{ border-left: 1px solid #e4e4e4; }
+.nav-mobile > li > a{ border: none; border-top: 1px solid #e4e4e4; border-right: 1px solid #e4e4e4; border-bottom: 1px solid #e4e4e4; font-size: 14px; }
+.mobile-show{ margin-top: 50px; }
+.mobile-content{ padding-top: 55px; }
+.mobile-text{ margin-top: 30px; padding-left: 6%; }
+.mobile-text h3{ font-weight: normal; text-align: left; font-size: 22px; margin-bottom: 20px; }
+.mobile-text p{ text-align: left; }
+.mobile-text .btn{ display: block; width: 198px; height: 48px; line-height: 48px; padding: 0; border: none; background-color: #3671cf; color: white; margin: 25px 0 0; }
+.mobile-content .col-md-6 img{ width: 100%; max-width: 540px; }
+.mobile-show-btn,.case-show-btn{ width: 80px; margin: 25px auto 0; padding-left: 0; }
+.mobile-show-btn li,.case-show-btn li{ float: left; margin-right: 4px; width: 6px; height: 6px; border-radius: 3px; background-color: #e4e4e4; cursor: pointer;}
+.mobile-show-btn .active,.case-show-btn .active{ background-color: #ff9900; }
+.mobile-case-text h3{ text-align: left; }
+.mobile-case-text strong{ display: block; font-weight: normal; color: #333333; }
+.mobile-case-text p{ text-align: left; }
+.mobile-case-text strong+p{ margin-top: 20px; margin-bottom: 20px; }
+.mobile-case-text .more{ font-size: 14px; }
+.case-show-btn{ margin-top: 45px; }
+.mobile-journal{ border-top: 1px solid #e4e4e4; margin-top: 20px; padding-top: 50px; margin-left: 0; margin-right: 0; }
+.mobile-journal img{ width: 100%; cursor: pointer; }
+.mobile-journal .carousel-indicators{ bottom: -55px; }
+.mobile-journal .carousel-indicators li{ background-color: #e4e4e4; }
+.mobile-journal .journal-bg{ display: none; z-index: 16; position: fixed; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); }
+.mobile-journal .journal-close{ position: fixed; font-size: 24px; color: #333333; left: 70%; top: 15px; margin-left: -20px; cursor: pointer;}
+.mobile-journal .journal-bigPic{ position: absolute; width: 40%; left: 30%; top: 15px;  }
+.mobile-journal .journal-bigPic img{ width: 100%; }
+.journal-bg .journal-left,.journal-bg .journal-right{ position: absolute; top: 45%; font-size: 70px; color: white; cursor: pointer;}
+.journal-bg .journal-left{ left: 20%; }
+.journal-bg .journal-right{ right: 20%; }
+/* mobile page end */
+
+/* application page begin */
+.application .container{ padding-top: 40px; padding-bottom: 35px; }
+.application h2{ text-align: left; margin-bottom: 10px; }
+.application h2+p{ margin-top: 15px; }
+h2{ margin-top: 0; }
+.application-recommend{ margin-top: 25px; }
+.application-recommend img{ width: 100%; }
+.application-list{ margin-top: 40px; padding-bottom: 40px; border-bottom: 1px solid #e3e3e3; }
+.application-list:last-child{ border-bottom: none; }
+.application-list img{ width: 100%; }
+.application-list h3{ margin-bottom: 15px; }
+.application-list h3 a{ font-size: 20px; color: #333333; }
+.application-list .more{ display: block; margin-top: 25px; }
+.application-material{ border-top: 1px solid #e3e3e3; padding-top: 20px; margin-top: 20px; }
+.application-material li{ float: left; width: 11%; height: 36px; line-height: 36px; }
+.application-case{ margin-top: 20px; }
+.more-case{ float: right; color: #f90; font-weight: normal; }
+/* application page end */
+
+@media(max-width: 1000px){
+	.mobile-journal .journal-bigPic{ width: 60%; left: 20%;}
+	.journal-bg .journal-left{ left: 10%; }
+	.journal-bg .journal-right{ right: 10%; }
+	.mobile-journal .journal-close{ left: 80%;
+}
+@media (max-width: 767px){
+	.application-list h3{ text-align: center; }
+	.application-list .more{ text-align: center; }
+	.z_banner{ text-align: center; }
+	.z_banner .container{ padding-top: 130px; }
+	.z_ks_banner h1{ font-size: 40px; }
+	.z_ks_banner h1 span{ display: none; }
+	.z_banner p{ margin-top: 50px; padding-left: 10%; padding-right: 10%; font-size: 16px;  line-height: 28px; }
+	.z_ks_content h1{ font-size: 20px; text-align: center; font-weight: normal; }
+	.z_ks_nr1 p{ font-size: 14px; line-height: 24px; }
+	.z_ks_wuliao li{ width: 33%; }
+	.pro-item{ border-bottom: none; }
+	.z_ks_case h1+p{ display: none; }
+	.z_ks_case .col-xs-6:nth-child(3){ display: none; }
+	.p-case h3 a{ font-size: 14px;  }
+	.p-case p{ display: none; }
+	.p-case .more{ display: none; }
+	.epc_content{ position: static; }
+	.epc_img_cover{ position: static; }
+	.epc_content img{ width: 50%; display: inline-block; float: left; }
+	.epc_content .epc_img_cover{ width: 45%; float: right; }
+	.epc_img_cover{ background: #f5f5f5; }
+	.epc_img_cover p{ display: block; color: #999999; font-size: 14px; line-height: 24px;}
+	.epc_img_cover strong{ padding-left: 0; font-size: 20px; }
+	.epc_content:hover .epc_img_cover{ padding-left: 0; padding-right: 0; background: #f5f5f5; color: #333333; }
+	.epc_content:hover .epc_img_cover strong{ padding-top: 0; padding-left: 0; }
+	.epc_content:hover .epc_img_cover p{ color: #999999; }
+	.z_banner h1{ font-size: 30px; padding-left: 10%; padding-right: 10%; }
+	.z_banner .z_banner_more{ padding-left: 0; padding-right: 0; }
+	.z_whole_case h1{ font-size: 20px; line-height: 24px; font-weight: normal; }
+	.z_whole_case h1+ p{ margin-top: 30px; font-size: 14px; line-height: 24px; }
+	.z_each_case p{ font-size: 14px; }
+	.z_application h1{ font-weight: normal; font-size: 20px; }
+	.z_application .img-responsive{ width: 100%; }
+	.z_application strong{ font-size: 20px; font-weight: normal; }
+	.z_application strong img{ display: none; }
+	.z_application p{ font-size: 14px; margin-bottom: 0; line-height: 24px; }
+	.z_nav{ display: none; }
+	.z_gc_solution{ padding-top: 20px; }
+	.z_gc_solution .text-center{ display: block; text-align: center; }
+	.z_gc_solution h1{ display: none; font-size: 20px; font-weight: normal; }
+	.z_gc_solution p{ font-size: 14px; line-height: 24px;}
+	.z_gc_liangdian h1{ font-size: 20px; font-weight: normal;}
+	.z_gc_liangdian img{ margin-top: 0; float: left; width: 50%; }
+	.z_gc_project{ width: 45%; float: right; background-color: white; padding: 0; }
+	.z_gc_project:hover{ background-color: white; }
+	.z_gc_project strong{ margin-top: 0; display: block; font-size: 20px; font-weight: normal;}
+	.z_gc_project p{ margin-top: 10px; font-size: 14px; }
+	.z_gc_project:hover strong{ color: #333333; }
+	.z_gc_project:hover p{ color: #666666;}
+	.z_gc_liangdian .col-xs-12{ margin-bottom: 20px; }
+	.z_gc_touzi h1{ font-size: 20px; font-weight: normal; }
+	.z_gc_touzi p{ font-size: 14px; line-height: 24px; }
+	.z_ks_case{ padding-top: 30px; padding-bottom: 0; }
+	.z_gc_case{ padding: 0; }
+	.z_gc_case h1{ font-size: 20px; font-weight: normal; }
+	.border-bottom{ border-bottom: none; }
+	.border-bottom .line{ display: none; }
+	/*.other_case h3{ font-size: 20px; font-weight: normal; text-align: center; }
+	.other_case .col-xs-6:nth-child(3){ display: none; }*/
+	.kuangshan_ks_banner{height:auto; background-position:top;}
+	.case-white-box p a{ font-size: 14px; }
+	.z_gc_product .col-md-4:nth-child(3) .z_gc_pro_show:first-child{ width: 48%; margin-top: 30px; float: left; }
+	.z_gc_product .col-md-4:nth-child(3) .z_gc_pro_show:last-child{ width: 48%; float: right; }
+	.z_gc_liangdian{ padding-top: 30px; padding-bottom: 30px; }
+	.z_gc_product{ padding-top: 40px; padding-bottom: 30px; }
+	.z_gc_product h1{ margin-bottom: 20px;}
+	.jzglPro_banner{ background: url(../images/jzgl/pro_banne_750.jpg) no-repeat center top; background-size: cover; }
+	.jzglPro_banner .text{ background: none; }
+	.jzglPro_banner{ padding-top: 120px; height: 680px; }
+	.banner .text p{ font-size: 16px; line-height: 30px; }
+	.jzglPro .part1{ padding-top: 40px; }
+	.jzglPro h2{ font-weight: 300; font-size: 23px; }
+	.jzglPro .part1 h2{ margin: 15px 0; }
+	.jzglPro .part1 .border-bottom{ border-bottom: 1px solid #eaedf2; }
+	.part2{ padding-top: 40px; }
+	.pro_wrap .col-xs-6{ border-bottom: 1px solid #eaedf2; }
+	.conveyor p{ padding-left: 15px; padding-right: 15px; }
+	
+	.jiancai_pro_show .col-md-4:nth-child(2){ margin-bottom: 30px; }
+	.jiancai_pro_show .col-md-4:nth-child(3){ margin-bottom: 30px; }
+	.jiancai_pro_info{ margin-bottom: 50px; }
+	.jiancai_pro_banner{ padding-bottom: 460px; height: auto; background: url(../images/business/jiancai/banner_jiancai_750.jpg) center center no-repeat; background-size: cover; }
+	.jiancai_banner_text{ background: none; }
+	.jiancai_banner_text h1{ text-align: center; }
+	.jiancai_banner_text p{ text-align: center; font-size: 16px; }
+	.jiancai_pro_first p{ margin-left: 0; width: 100%; height: 76px; }
+	.epc_img_cover strong{ line-height: 36px; }
+	.z_ks_banner{ background: url("../images/business/kuangshan/solution_ks_750.jpg"); background-size: cover; }
+	.z_solution_banner{ background: url("../images/business/jiancai/banner_solution_750.jpg"); background-size: cover; }
+	.z_ss_banner{ background: url("../images/business/jiancai/u2716_750.jpg"); background-size: cover; }
+	.z_sj_banner{ background: url("../images/business/jiancai/u3152_750.jpg"); background-size: cover; }
+	.z_fqw_banner{ background: url("../images/business/jiancai/u4044_750.jpg"); background-size: cover; }
+	.z_lsks_banner{ background: url("../images/business/jiancai/u3659_750.jpg"); background-size: cover; }
+	.z_ss_banner .img_cover,.z_sj_banner .img_cover,.z_fqw_banner .img_cover, .z_lsks_banner .img_cover{ background: none; }
+	.m_mine_cases{background-image:url("../images/business/kuangshan/m_mine_cases.jpg"); height:1035px;}
+	.m_mine_cases .kuangshan_ks_banner_text, .jiancai_banner_text{background:rgba(50, 152, 234, 0.9); max-width:567px; margin:381px auto 0 auto; padding:64px 29px; text-align:center;}
+	.m_mine_cases .kuangshan_ks_banner_text h1, .jiancai_banner_text h1{font-size:30px; font-weight:300; line-height:40px; margin-bottom:21px;}
+	.m_mine_cases .kuangshan_ks_banner_text p, .jiancai_banner_text p{font-size:16px; line-height:28px;}
+	.kuangshan_ks_case{padding-top:60px; padding-bottom:70px;}
+	.ks_case_list{margin-bottom:0;}
+	.ks_case_list p{border-bottom:0; font-size:16px; line-height:28px; height:90px; padding:27px 0 7px 0; text-align:left;}
+	.jiancai_case_banner{background-image:url("../images/business/jiancai/m_material_cases.jpg"); height:1035px;}
+	.jumbotron{ margin-bottom: 0; }
+	.z_application{ padding-top: 0; }
+	.z_application h1{ margin-bottom: 30px; }
+	.z_application strong{ margin-top: 0; }
+	.z_whole_case{ padding-bottom: 30px; }
+	.z_application{ padding-bottom: 30px; }
+	.z_gc_parameter,.z_gc_touzi{ padding-top: 30px; padding-bottom: 30px; }
+	.mobile h2{ font-size: 24px; }
+	.mobile-case-text h3{ text-align: center; }
+}
+@media (max-width: 600px){
+	.z_banner p{ font-size: 14px; line-height: 24px; }
+	.z_ks_nr1 p{ font-size: 14px; line-height: 24px; }
+	.epc_img_cover strong{ font-size: 24px; }
+	.epc_img_cover p{ font-size: 14px; line-height: 24px;}
+	.z_each_case p{ font-size: 13px; }
+	.z_application p{ font-size: 14px;line-height: 24px; }
+	.z_gc_solution p{ font-size: 14px; }
+	.p-case h3 a{ font-size: 14px; }
+	.case-white-box p a{ font-size: 14px; }
+	.jiancai_pro_first p{ height: 40px; line-height: 40px; }
+}
+@media (max-width: 570px){
+	
+}
+@media (max-width: 480px){
+	.epc_img_cover p{ font-size: 12px; }
+	.z_gc_project strong{ font-size: 16px; }
+	.z_gc_project p{ margin-top: 0; font-size: 12px; line-height: 24px; }
+	.z_gc_pro_show p{ height: 30px; line-height: 30px; font-size: 13px; }
+	.z_parameter_note p{ font-size: 12px; }
+}

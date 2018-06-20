@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  ~ 版权所有 2018 ，xieyunbo.com
+  -->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xyb.trash.dao.cms.CmsColumnInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.xyb.trash.pojo.cms.CmsColumnInfo" >
+    <id column="column_id" property="columnId" jdbcType="BIGINT" />
+    <result column="column_name" property="columnName" jdbcType="VARCHAR" />
+    <result column="column_introduce" property="columnIntroduce" jdbcType="VARCHAR" />
+    <result column="column_image" property="columnImage" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="column_parentid" property="columnParentid" jdbcType="BIGINT" />
+    <result column="ordinal" property="ordinal" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    column_id, column_name, column_introduce, column_image, status, create_time, update_time, 
+    column_parentid, ordinal
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from nb_column_info
+    where column_id = #{columnId,jdbcType=BIGINT}
+  </select>
+  <!-- 查询所有启用的菜单 -->
+  <select id="getAllColumnList" resultMap="BaseResultMap"  >
+    select 
+    <include refid="Base_Column_List" />
+    from nb_column_info
+  </select>
+   <select id="getColumnListByCondition" parameterType="Map" resultMap="BaseResultMap"  >
+    select 
+    <include refid="Base_Column_List" />
+    from nb_column_info where 1=1 
+    <if test="status!=null">
+				AND status = #{status,jdbcType=VARCHAR}
+	</if>
+  </select>
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from nb_column_info
+    where column_id = #{columnId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.xyb.trash.pojo.cms.CmsColumnInfo" >
+    insert into nb_column_info (column_id, column_name, column_introduce, 
+      column_image, status, create_time, 
+      update_time, column_parentid, ordinal
+      )
+    values (#{columnId,jdbcType=BIGINT}, #{columnName,jdbcType=VARCHAR}, #{columnIntroduce,jdbcType=VARCHAR}, 
+      #{columnImage,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{columnParentid,jdbcType=BIGINT}, #{ordinal,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xyb.trash.pojo.cms.CmsColumnInfo" >
+    insert into nb_column_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="columnId != null" >
+        column_id,
+      </if>
+      <if test="columnName != null" >
+        column_name,
+      </if>
+      <if test="columnIntroduce != null" >
+        column_introduce,
+      </if>
+      <if test="columnImage != null" >
+        column_image,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="columnParentid != null" >
+        column_parentid,
+      </if>
+      <if test="ordinal != null" >
+        ordinal,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="columnId != null" >
+        #{columnId,jdbcType=BIGINT},
+      </if>
+      <if test="columnName != null" >
+        #{columnName,jdbcType=VARCHAR},
+      </if>
+      <if test="columnIntroduce != null" >
+        #{columnIntroduce,jdbcType=VARCHAR},
+      </if>
+      <if test="columnImage != null" >
+        #{columnImage,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="columnParentid != null" >
+        #{columnParentid,jdbcType=BIGINT},
+      </if>
+      <if test="ordinal != null" >
+        #{ordinal,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xyb.trash.pojo.cms.CmsColumnInfo" >
+    update nb_column_info
+    <set >
+      <if test="columnName != null" >
+        column_name = #{columnName,jdbcType=VARCHAR},
+      </if>
+      <if test="columnIntroduce != null" >
+        column_introduce = #{columnIntroduce,jdbcType=VARCHAR},
+      </if>
+      <if test="columnImage != null" >
+        column_image = #{columnImage,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="columnParentid != null" >
+        column_parentid = #{columnParentid,jdbcType=BIGINT},
+      </if>
+      <if test="ordinal != null" >
+        ordinal = #{ordinal,jdbcType=INTEGER},
+      </if>
+    </set>
+    where column_id = #{columnId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xyb.trash.pojo.cms.CmsColumnInfo" >
+    update nb_column_info
+    set column_name = #{columnName,jdbcType=VARCHAR},
+      column_introduce = #{columnIntroduce,jdbcType=VARCHAR},
+      column_image = #{columnImage,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      column_parentid = #{columnParentid,jdbcType=BIGINT},
+      ordinal = #{ordinal,jdbcType=INTEGER}
+    where column_id = #{columnId,jdbcType=BIGINT}
+  </update>
+</mapper>

@@ -1,3 +1,7 @@
+/*
+ * 版权所有 2018 ，xieyunbo.com
+ */
+
 jQuery(document).ready(function($){
 	var slidesWrapper = $('.cd-hero-slider');
 

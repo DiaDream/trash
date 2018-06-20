@@ -8,6 +8,8 @@
 
 package com.xyb.trash;
 
+import com.xyb.trash.util.commonutil.Cryptos;
+
 /**
  * Created by xieyunbo on 2018/5/7.
  */
@@ -71,9 +73,10 @@ public class MainTest {
         System.out.println(jsonstr);
 
 
-//        String root = Cryptos.aesEncrypt("root");
-//        System.out.println(root);
-//        String decrypt = Cryptos.aesDecrypt("3aa26cad34a49e71cf763a37b0e8862e");
-//        System.out.println(decrypt);
+        String root = Cryptos.aesEncrypt("root");
+        System.out.println(root);
+        String decrypt = Cryptos.aesDecrypt("3aa26cad34a49e71cf763a37b0e8862e");
+        System.out.println(decrypt);
+
     }
 }

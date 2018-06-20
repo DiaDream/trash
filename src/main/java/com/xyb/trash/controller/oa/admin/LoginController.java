@@ -122,7 +122,7 @@ public class LoginController extends BaseController
         }
         catch (IOException e)
         {
-            log.errorLog ("smallApp () error.", e);;
+            log.errorLog ("smallApp () error.", e);
         }
         finally
         {

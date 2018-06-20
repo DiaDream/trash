@@ -1,3 +1,7 @@
+/*
+ * 版权所有 2018 ，xieyunbo.com
+ */
+
 if (function (t, e)
     {
         "use strict";

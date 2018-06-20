@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  ~ 版权所有 2018 ，xieyunbo.com
+  -->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xyb.trash.dao.cms.CmsNewsMapper" >
+  <resultMap id="BaseResultMap" type="com.xyb.trash.pojo.cms.CmsNews" >
+    <id column="article_id" property="articleId" jdbcType="BIGINT" />
+    <result column="column_id" property="columnId" jdbcType="BIGINT" />
+    <result column="column_name" property="columnName" jdbcType="VARCHAR" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="short_title" property="shortTitle" jdbcType="VARCHAR" />
+    <result column="file_path" property="filePath" jdbcType="VARCHAR" />
+    <result column="previewabstract" property="previewabstract" jdbcType="VARCHAR" />
+    <result column="check_status" property="checkStatus" jdbcType="VARCHAR" />
+    <result column="release_time" property="releaseTime" jdbcType="TIMESTAMP" />
+    <result column="origin" property="origin" jdbcType="VARCHAR" />
+    <result column="author" property="author" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="article_type" property="articleType" jdbcType="VARCHAR" />
+    <result column="receiver_id" property="receiverId" jdbcType="BIGINT" />
+    <result column="important" property="important" jdbcType="VARCHAR" />
+    <result column="clicktotal" property="clicktotal" jdbcType="INTEGER" />
+    <result column="description" property="description" jdbcType="VARCHAR" />
+    <result column="tags" property="tags" jdbcType="VARCHAR" />
+    <result column="outurl" property="outurl" jdbcType="VARCHAR" />
+    <result column="recommendcount" property="recommendcount" jdbcType="INTEGER" />
+    <result column="creator_id" property="creatorId" jdbcType="BIGINT" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="audit_time" property="auditTime" jdbcType="TIMESTAMP" />
+    <result column="auditor" property="auditor" jdbcType="BIGINT" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.xyb.trash.pojo.cms.CmsNews" extends="BaseResultMap" >
+    <result column="content" property="content" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    article_id, column_id, column_name, title, short_title, file_path, previewabstract, 
+    check_status, release_time, origin, author, status, article_type, receiver_id, important, 
+    clicktotal, description, tags, outurl, recommendcount, creator_id, create_time, audit_time, 
+    auditor
+  </sql>
+  <sql id="Blob_Column_List" >
+    content
+  </sql>
+  <!-- 新闻查询条件 -->
+  <sql id="Where_NewsList">
+  		<where>
+  			1=1
+  			 <if test="title!=null and title!='%%'">
+				AND title like #{title,jdbcType=VARCHAR}
+			</if>
+			<if test="author!=null and author!='%%'">
+				AND author like #{author,jdbcType=VARCHAR}
+			</if>
+			<if test="startTime!=null">
+				AND release_time &gt;= #{startTime,jdbcType=TIMESTAMP}
+			</if>
+			<if test="endTime!=null">
+				AND release_time &lt;= #{endTime,jdbcType=TIMESTAMP}
+			</if>
+			and status='0'
+  		</where>
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from nb_notice_article
+    where article_id = #{articleId,jdbcType=BIGINT}
+  </select>
+  
+  <!-- 查询所有新闻 -->
+  <select id="getNewsList" parameterType="Map" resultMap="ResultMapWithBLOBs">
+  		select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from nb_notice_article 
+   <include refid="Where_NewsList" />
+    order by important desc, create_time desc
+  </select>
+   <!-- 查询所有新闻条数 -->
+  <select id="countNews" parameterType="Map" resultType="integer">
+ 	select count(1) 
+    from nb_notice_article 
+   <include refid="Where_NewsList" />
+    order by create_time desc
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from nb_notice_article
+    where article_id = #{articleId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.xyb.trash.pojo.cms.CmsNews" >
+    insert into nb_notice_article (article_id, column_id, column_name, 
+      title, short_title, file_path, 
+      previewabstract, check_status, release_time, 
+      origin, author, status, 
+      article_type, receiver_id, important, 
+      clicktotal, description, tags, 
+      outurl, recommendcount, creator_id, 
+      create_time, audit_time, auditor, 
+      content)
+    values (#{articleId,jdbcType=BIGINT}, #{columnId,jdbcType=BIGINT}, #{columnName,jdbcType=VARCHAR}, 
+      #{title,jdbcType=VARCHAR}, #{shortTitle,jdbcType=VARCHAR}, #{filePath,jdbcType=VARCHAR}, 
+      #{previewabstract,jdbcType=VARCHAR}, #{checkStatus,jdbcType=VARCHAR}, #{releaseTime,jdbcType=TIMESTAMP}, 
+      #{origin,jdbcType=VARCHAR}, #{author,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, 
+      #{articleType,jdbcType=VARCHAR}, #{receiverId,jdbcType=BIGINT}, #{important,jdbcType=VARCHAR}, 
+      #{clicktotal,jdbcType=INTEGER}, #{description,jdbcType=VARCHAR}, #{tags,jdbcType=VARCHAR}, 
+      #{outurl,jdbcType=VARCHAR}, #{recommendcount,jdbcType=INTEGER}, #{creatorId,jdbcType=BIGINT}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{auditTime,jdbcType=TIMESTAMP}, #{auditor,jdbcType=BIGINT}, 
+      #{content,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xyb.trash.pojo.cms.CmsNews" >
+    insert into nb_notice_article
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="articleId != null" >
+        article_id,
+      </if>
+      <if test="columnId != null" >
+        column_id,
+      </if>
+      <if test="columnName != null" >
+        column_name,
+      </if>
+      <if test="title != null" >
+        title,
+      </if>
+      <if test="shortTitle != null" >
+        short_title,
+      </if>
+      <if test="filePath != null" >
+        file_path,
+      </if>
+      <if test="previewabstract != null" >
+        previewabstract,
+      </if>
+      <if test="checkStatus != null" >
+        check_status,
+      </if>
+      <if test="releaseTime != null" >
+        release_time,
+      </if>
+      <if test="origin != null" >
+        origin,
+      </if>
+      <if test="author != null" >
+        author,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="articleType != null" >
+        article_type,
+      </if>
+      <if test="receiverId != null" >
+        receiver_id,
+      </if>
+      <if test="important != null" >
+        important,
+      </if>
+      <if test="clicktotal != null" >
+        clicktotal,
+      </if>
+      <if test="description != null" >
+        description,
+      </if>
+      <if test="tags != null" >
+        tags,
+      </if>
+      <if test="outurl != null" >
+        outurl,
+      </if>
+      <if test="recommendcount != null" >
+        recommendcount,
+      </if>
+      <if test="creatorId != null" >
+        creator_id,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="auditTime != null" >
+        audit_time,
+      </if>
+      <if test="auditor != null" >
+        auditor,
+      </if>
+      <if test="content != null" >
+        content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="articleId != null" >
+        #{articleId,jdbcType=BIGINT},
+      </if>
+      <if test="columnId != null" >
+        #{columnId,jdbcType=BIGINT},
+      </if>
+      <if test="columnName != null" >
+        #{columnName,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="shortTitle != null" >
+        #{shortTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="filePath != null" >
+        #{filePath,jdbcType=VARCHAR},
+      </if>
+      <if test="previewabstract != null" >
+        #{previewabstract,jdbcType=VARCHAR},
+      </if>
+      <if test="checkStatus != null" >
+        #{checkStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="releaseTime != null" >
+        #{releaseTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="origin != null" >
+        #{origin,jdbcType=VARCHAR},
+      </if>
+      <if test="author != null" >
+        #{author,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="articleType != null" >
+        #{articleType,jdbcType=VARCHAR},
+      </if>
+      <if test="receiverId != null" >
+        #{receiverId,jdbcType=BIGINT},
+      </if>
+      <if test="important != null" >
+        #{important,jdbcType=VARCHAR},
+      </if>
+      <if test="clicktotal != null" >
+        #{clicktotal,jdbcType=INTEGER},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="tags != null" >
+        #{tags,jdbcType=VARCHAR},
+      </if>
+      <if test="outurl != null" >
+        #{outurl,jdbcType=VARCHAR},
+      </if>
+      <if test="recommendcount != null" >
+        #{recommendcount,jdbcType=INTEGER},
+      </if>
+      <if test="creatorId != null" >
+        #{creatorId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="auditTime != null" >
+        #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="auditor != null" >
+        #{auditor,jdbcType=BIGINT},
+      </if>
+      <if test="content != null" >
+        #{content,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xyb.trash.pojo.cms.CmsNews" >
+    update nb_notice_article
+    <set >
+      <if test="columnId != null" >
+        column_id = #{columnId,jdbcType=BIGINT},
+      </if>
+      <if test="columnName != null" >
+        column_name = #{columnName,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null" >
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="shortTitle != null" >
+        short_title = #{shortTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="filePath != null" >
+        file_path = #{filePath,jdbcType=VARCHAR},
+      </if>
+      <if test="previewabstract != null" >
+        previewabstract = #{previewabstract,jdbcType=VARCHAR},
+      </if>
+      <if test="checkStatus != null" >
+        check_status = #{checkStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="releaseTime != null" >
+        release_time = #{releaseTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="origin != null" >
+        origin = #{origin,jdbcType=VARCHAR},
+      </if>
+      <if test="author != null" >
+        author = #{author,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="articleType != null" >
+        article_type = #{articleType,jdbcType=VARCHAR},
+      </if>
+      <if test="receiverId != null" >
+        receiver_id = #{receiverId,jdbcType=BIGINT},
+      </if>
+      <if test="important != null" >
+        important = #{important,jdbcType=VARCHAR},
+      </if>
+      <if test="clicktotal != null" >
+        clicktotal = #{clicktotal,jdbcType=INTEGER},
+      </if>
+      <if test="description != null" >
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="tags != null" >
+        tags = #{tags,jdbcType=VARCHAR},
+      </if>
+      <if test="outurl != null" >
+        outurl = #{outurl,jdbcType=VARCHAR},
+      </if>
+      <if test="recommendcount != null" >
+        recommendcount = #{recommendcount,jdbcType=INTEGER},
+      </if>
+      <if test="creatorId != null" >
+        creator_id = #{creatorId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="auditTime != null" >
+        audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="auditor != null" >
+        auditor = #{auditor,jdbcType=BIGINT},
+      </if>
+      <if test="content != null" >
+        content = #{content,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where article_id = #{articleId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.xyb.trash.pojo.cms.CmsNews" >
+    update nb_notice_article
+    set column_id = #{columnId,jdbcType=BIGINT},
+      column_name = #{columnName,jdbcType=VARCHAR},
+      title = #{title,jdbcType=VARCHAR},
+      short_title = #{shortTitle,jdbcType=VARCHAR},
+      file_path = #{filePath,jdbcType=VARCHAR},
+      previewabstract = #{previewabstract,jdbcType=VARCHAR},
+      check_status = #{checkStatus,jdbcType=VARCHAR},
+      release_time = #{releaseTime,jdbcType=TIMESTAMP},
+      origin = #{origin,jdbcType=VARCHAR},
+      author = #{author,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR},
+      article_type = #{articleType,jdbcType=VARCHAR},
+      receiver_id = #{receiverId,jdbcType=BIGINT},
+      important = #{important,jdbcType=VARCHAR},
+      clicktotal = #{clicktotal,jdbcType=INTEGER},
+      description = #{description,jdbcType=VARCHAR},
+      tags = #{tags,jdbcType=VARCHAR},
+      outurl = #{outurl,jdbcType=VARCHAR},
+      recommendcount = #{recommendcount,jdbcType=INTEGER},
+      creator_id = #{creatorId,jdbcType=BIGINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      auditor = #{auditor,jdbcType=BIGINT},
+      content = #{content,jdbcType=LONGVARCHAR}
+    where article_id = #{articleId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xyb.trash.pojo.cms.CmsNews" >
+    update nb_notice_article
+    set column_id = #{columnId,jdbcType=BIGINT},
+      column_name = #{columnName,jdbcType=VARCHAR},
+      title = #{title,jdbcType=VARCHAR},
+      short_title = #{shortTitle,jdbcType=VARCHAR},
+      file_path = #{filePath,jdbcType=VARCHAR},
+      previewabstract = #{previewabstract,jdbcType=VARCHAR},
+      check_status = #{checkStatus,jdbcType=VARCHAR},
+      release_time = #{releaseTime,jdbcType=TIMESTAMP},
+      origin = #{origin,jdbcType=VARCHAR},
+      author = #{author,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR},
+      article_type = #{articleType,jdbcType=VARCHAR},
+      receiver_id = #{receiverId,jdbcType=BIGINT},
+      important = #{important,jdbcType=VARCHAR},
+      clicktotal = #{clicktotal,jdbcType=INTEGER},
+      description = #{description,jdbcType=VARCHAR},
+      tags = #{tags,jdbcType=VARCHAR},
+      outurl = #{outurl,jdbcType=VARCHAR},
+      recommendcount = #{recommendcount,jdbcType=INTEGER},
+      creator_id = #{creatorId,jdbcType=BIGINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      auditor = #{auditor,jdbcType=BIGINT}
+    where article_id = #{articleId,jdbcType=BIGINT}
+  </update>
+</mapper>

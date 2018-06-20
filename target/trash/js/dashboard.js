@@ -1,3 +1,7 @@
+/*
+ * 版权所有 2018 ，xieyunbo.com
+ */
+
 var Dashboard = function ()
 {
     var e = function (e, t, a, r)
